@@ -1,13 +1,25 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}">
-    <title>Digit Recognition</title>
-  </head>
-  <body>
-    <canvas id="canvas"></canvas>
+	<head>
+		<meta charset="utf-8">
+		<title>Digit Recognisition</title>
+	</head>
+	<body>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/main.css')}}">
+		<h1>Digit Recognisition using MNIST dataset</h1>
+		<div class="row">
+			<div class="column">
+				<canvas id="canvas" width="200" height="200"></canvas>
+			</div>
+			<div class="column">
+				<img src="https://sdtimes.com/wp-content/uploads/2019/06/FtFnqC38_400x400.png" id="user_image" alt="This was the image you drew">
+			</div>
+		</div>
+		<button type="button" id="Display">Display Canvas</button>
+		<button type="button" id="Recognise">Recognise</button>
 
-    <script type=text/javascript src="{{url_for('static', filename='canvas.js') }}"></script>
-  </body>
+	</body>
+	<script type="text/javascript" src="{{url_for('static',filename='js/canvas.js')}}">
+
+	</script>
 </html>

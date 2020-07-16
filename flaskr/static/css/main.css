@@ -1,0 +1,65 @@
+body{
+  background-color: #252525;
+
+}
+h1{
+  font-style: Times;
+  color: white;
+  text-align: center;
+  padding-top: 20px;
+  text-decoration: underline;
+  text-underline-position: under;
+}
+#canvas{
+  border: 2px solid white;
+  margin-left: 110px;
+  margin-top: 100px;
+}
+#Display {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 150px;
+}
+#Recognise {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 190px;
+
+}
+.column {
+  float: left;
+  width: 33.33%%;
+  padding: 5px;
+  margin-left: 40px;
+}
+#user_image{
+  border: 2px solid white;
+  padding: 0px;
+  width: 200px;
+  height: 200px;
+  margin-top: 100px;
+  margin-left: 140px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
