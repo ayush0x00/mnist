@@ -1,7 +1,8 @@
 window.addEventListener("load",()=>{
   const canvas=document.querySelector("#canvas");
   const c=canvas.getContext("2d");
-  console.log(c);
+  //let classifier;
+  //console.log(c);
 
   //ctx.globalCompositeOperation = 'destination-over';
   //c.fillStyle='white';

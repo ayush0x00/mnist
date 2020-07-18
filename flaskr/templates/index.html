@@ -15,11 +15,15 @@
 				<img src="https://sdtimes.com/wp-content/uploads/2019/06/FtFnqC38_400x400.png" id="user_image" alt="This was the image you drew">
 			</div>
 		</div>
-		<button type="button" id="Display">Display Canvas</button>
+		<button type="button" id="Display">Show</button>
 		<button type="button" id="Recognise">Recognise</button>
-
+		<script type="text/javascript" src="{{url_for('static',filename='js/canvas.js')}}"></script>
+		<!-- Import TensorFlow.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
+  <!-- Import tfjs-vis -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@1.0.2/dist/tfjs-vis.umd.min.js"></script>
 	</body>
-	<script type="text/javascript" src="{{url_for('static',filename='js/canvas.js')}}">
+
 
 	</script>
 </html>
