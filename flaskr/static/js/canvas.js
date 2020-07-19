@@ -42,4 +42,15 @@ window.addEventListener("load",()=>{
     image_view.src= dataURI;
     c.clearRect(0,0,canvas.width,canvas.height)
   });
+  $("#Recognise").click(function(){
+       let message = {
+           image: base64Image
+       }
+       console.log(message);
+       $.post("http://127.0.0.1:5000/send", JSON.stringify(message), function(response){
+           //$("#dog-prediction").text(response.prediction.dog.toFixed(6));
+           //$("#cat-prediction").text(response.prediction.cat.toFixed(6));
+           console.log(response);
+       });
+     });
 });
