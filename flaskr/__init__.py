@@ -28,5 +28,6 @@ def welcome():
 
 @app.route("/send",methods=['POST'])
 def printing():
-    received_string=request.args.get('image_string')
-    return received_string
+    # received_string=request.args.get('image_string')
+    name = request.form['name']
+    return render_template("welcome.html", data=name)

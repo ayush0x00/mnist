@@ -14,15 +14,8 @@
 			<div class="column">
 				<img src="https://sdtimes.com/wp-content/uploads/2019/06/FtFnqC38_400x400.png" id="user_image" alt="This was the image you drew">
 			</div>
-		</div>
-		<form  action="{{ url_for('printing') }}" enctype="multipart/form-data" method="post">
-			<input type="text" id="inputTxt" name='name'>
-			<button type="button" name="sed" id="Display">Show</button>
-			<button type="submit" name="sed2" id="Recognise">Recognise</button>
-		</form>
-		<div id="success" class="alert alert-success" role="alert" style="display: none;"></div>
-		<div id="errorAlert" class="alert alert-danger" role="alert" style="display: none;"></div>
-		<script type="text/javascript" src="{{url_for('static',filename='js/canvas.js')}}"></script>
+        </div>
+        <h1 style="color: #fff;">{{data}}</h1>
 		<!-- Import TensorFlow.js -->
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	</body>

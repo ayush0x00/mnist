@@ -42,14 +42,25 @@ window.addEventListener("load",()=>{
     image_view.src= dataURI;
     c.clearRect(0,0,canvas.width,canvas.height)
   });
-  $("#Recognise").click(function(e){
-       e.preventDefault();
-       $.ajax({
-         type:"POST",
-         url: "http://127.0.0.1:5000/send",
-         data:{
-           'image_string':"hello"
-         }
-       });
-     });
+
+  $('form').on('submit', function(event){
+    event.preventDefault();
+    $.ajax({
+      data:{
+        image_string: $('#inputTxt').val(),
+      },
+      type:"POST",
+      url: "/send"
+    })
+    .done(function(data)){
+      if(data.error){
+        $('#errorAlret').text(data.error).show();
+        $('#success').hide();
+      }
+      else{
+        $('#success').text(data.image_string).show();
+        $('#errorAlert').hide();
+      }
+    });
+  });
 });
