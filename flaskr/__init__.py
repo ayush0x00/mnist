@@ -1,6 +1,6 @@
 from flask import Flask,render_template,jsonify,request
 from flask_sqlalchemy import SQLAlchemy
-import json
+import json,base64
 import pickle
 import os,sys
 
@@ -26,7 +26,9 @@ def welcome():
     renderblog()
     return render_template("index.html")
 
-@app.route("/send",methods=['POST'])
+
+@app.route("/send",methods=['GET','POST'])
 def printing():
-    received_string=request.args.get('image_string')
-    return received_string
+    received_string=request.get_data()
+    decoded=base64.b64decode(received_string)
+    return decoded

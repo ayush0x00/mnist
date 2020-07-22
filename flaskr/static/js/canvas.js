@@ -36,20 +36,20 @@ window.addEventListener("load",()=>{
 
   const display=document.querySelector("#Display");
   const image_view=document.querySelector("#user_image");
+  let dataURI;
     display.addEventListener("click",()=>{
-    const dataURI=canvas.toDataURL();
+    dataURI=canvas.toDataURL();
     //console.log(dataURI);
     image_view.src= dataURI;
     c.clearRect(0,0,canvas.width,canvas.height)
   });
   $("#Recognise").click(function(e){
+    //var $SCRIPT_ROOT = {{request.script_root|tojson|safe}};
        e.preventDefault();
        $.ajax({
          type:"POST",
-         url: "http://127.0.0.1:5000/send",
-         data:{
-           'image_string':"hello"
-         }
+         url: $SCRIPT_ROOT + "/send",
+         data:dataURI
        });
      });
 });

@@ -19,6 +19,9 @@
 			<button type="button" name="sed" id="Display">Show</button>
 			<button type="submit" name="sed2" id="Recognise">Recognise</button>
 		</form>
+		<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
 		<script type="text/javascript" src="{{url_for('static',filename='js/canvas.js')}}"></script>
 		<!-- Import TensorFlow.js -->
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
