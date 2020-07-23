@@ -49,7 +49,10 @@ window.addEventListener("load",()=>{
        $.ajax({
          type:"POST",
          url: $SCRIPT_ROOT + "/send",
-         data:dataURI
+         data:dataURI,
+         success: function(data){
+           console.log(data);
+         }
        });
      });
 });

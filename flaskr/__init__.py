@@ -1,7 +1,9 @@
-from flask import Flask,render_template,jsonify,request
+from flask import Flask,render_template,jsonify,request,send_file
 from flask_sqlalchemy import SQLAlchemy
 import json,base64
-import pickle
+import re
+import numpy as np
+from PIL import Image
 import os,sys
 
 app=Flask(__name__)
@@ -18,7 +20,10 @@ def renderblog():
     filename = os.path.join(app.static_folder, 'model/model.json')
     with open(filename) as blog_file:
         model = json.load(blog_file)
-
+def parseImage(imgData):
+    # parse canvas bytes and save as output.png
+    imgstr = re.search(b'base64,(.*)', imgData).group(1)
+    return base64.decodebytes(imgstr)
 
 @app.route("/",methods=['GET'])
 def welcome():
@@ -29,6 +34,5 @@ def welcome():
 
 @app.route("/send",methods=['GET','POST'])
 def printing():
-    received_string=request.get_data()
-    decoded=base64.b64decode(received_string)
-    return decoded
+    image_send= parseImage(request.get_data())
+    return (image_send)
