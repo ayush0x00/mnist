@@ -51,7 +51,8 @@ window.addEventListener("load",()=>{
          url: $SCRIPT_ROOT + "/send",
          data:dataURI,
          success: function(data){
-           console.log(data);
+           var receive=document.createElement('img');
+           receive.src=data;
          }
        });
      });

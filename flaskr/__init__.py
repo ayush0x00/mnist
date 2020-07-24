@@ -35,4 +35,4 @@ def welcome():
 @app.route("/send",methods=['GET','POST'])
 def printing():
     image_send= parseImage(request.get_data())
-    return (image_send)
+    return base64.encodebytes(image_send)
