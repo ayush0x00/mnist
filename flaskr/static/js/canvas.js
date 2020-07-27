@@ -48,11 +48,10 @@ window.addEventListener("load",()=>{
        e.preventDefault();
        $.ajax({
          type:"POST",
-         url: $SCRIPT_ROOT + "/send",
+         url: $SCRIPT_ROOT + "/predict",
          data:dataURI,
          success: function(data){
-           var receive=document.createElement('img');
-           receive.src=data;
+           document.getElementById('for_change').innerHTML=data;
          }
        });
      });
